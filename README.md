@@ -7,7 +7,7 @@
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)](https://vite.dev)
 [![React Router](https://img.shields.io/badge/React_Router-7-CA4245?logo=reactrouter&logoColor=white)](https://reactrouter.com)
-[![Maximiliano López](https://img.shields.io/badge/GitHub-maaxilopp-181717?logo=github&logoColor=white)](https://github.com/maaxilopp)
+[![Maximiliano López](https://img.shields.io/badge/GitHub-Maximiliano_López-B7E3FF?logo=github&logoColor=black)](https://github.com/maaxilopp)
 
 Trabajo práctico de **Desarrollo Web y Mobile** - UT5
 
