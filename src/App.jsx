@@ -1,14 +1,17 @@
-import { useRandomCountry } from "./hooks/useRandomCountry";
-import { CountryCard } from "./componentes/CountryCard";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { CountriesPage } from "./pages/CountriesPage";
+import { CountryDetailPage } from "./pages/CountryDetailPage";
 import "./App.css";
 
 export default function App() {
-  const { country, error, loading, roll } = useRandomCountry();
-
   return (
     <main className="app">
       <h1>Países del Mundo</h1>
-      {country && <CountryCard country={country} />}
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/countries" />} />
+        <Route path="/countries" element={<CountriesPage />} />
+        <Route path="/countries/:cca2" element={<CountryDetailPage />} />
+      </Routes>
     </main>
   );
 }
