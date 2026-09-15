@@ -1,58 +1,91 @@
-# Generador de Países - Trabajo de la asignatura Desarrollo Web y Mobile
+<div align="center">
 
-[![Maximiliano López](https://img.shields.io/badge/GitHub-Maximiliano_López-B7E3FF?logo=github&logoColor=black)](https://github.com/maaxilopp)
+# 🌍 Países del Mundo
 
-Aplicación hecha con React que elige un país al azar y muestra su nombre, su bandera y un reloj analógico con la hora local de ese país.
+**Explorá los 250 países del mundo, su bandera y la hora exacta en cada uno.**
 
-## Interfáz grafica
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)](https://vite.dev)
+[![React Router](https://img.shields.io/badge/React_Router-7-CA4245?logo=reactrouter&logoColor=white)](https://reactrouter.com)
+[![Maximiliano López](https://img.shields.io/badge/GitHub-maaxilopp-181717?logo=github&logoColor=white)](https://github.com/maaxilopp)
 
-<img width="952" height="469" alt="image" src="https://github.com/user-attachments/assets/8e3b5861-1aaf-47a5-ba0c-335be018d072" />
+Trabajo práctico de **Desarrollo Web y Mobile** - UT5
 
+</div>
 
+---
 
-## Funcionalidades
+<img width="952" alt="Vista de la aplicación" src="https://github.com/user-attachments/assets/8e3b5861-1aaf-47a5-ba0c-335be018d072" />
+<img width="952" height="461" alt="image" src="https://github.com/user-attachments/assets/73b93e1c-5cd5-42e1-bb27-1b6be547b209" />
 
-* Selección de un país al azar consumiendo la API de countries.dev
-* Muestra el nombre del país y su código ISO alpha-2
-* Bandera renderizada en SVG
-* Reloj analógico que marca la hora del huso horario del país, actualizado cada segundo
-* Hora también en formato digital
-* Botón para sortear otro país sin recargar la página
-* Manejo de estados de carga y de error
+---
 
-## Tecnologías utilizadas
+## ✨ Qué hace
 
-* React
-* Vite
-* JavaScript
-* react-clock
-* dayjs
-* API de countries.dev
+Una SPA que consume la API pública de [countries.dev](https://countries.dev) y resuelve toda la navegación del lado del cliente con **react-router**, sin recargas.
 
-## Cómo ejecutarlo
+| | |
+|---|---|
+| 🗂️ **Catálogo completo** | Los 250 países ordenados alfabéticamente, en una grilla responsive |
+| 🔎 **Detalle por país** | Bandera, capital y código ISO alpha-2 |
+| 🕐 **Hora real** | Reloj analógico y digital con el huso horario del país, al segundo |
+| 🔗 **URLs compartibles** | Cada país vive en su propia ruta: `/countries/UY` |
+| ⚡ **Estados manejados** | Carga y error cubiertos en ambas vistas |
 
-Cloná el repositorio e instalá las dependencias:
+## 🧭 Rutas
 
+| Ruta | Componente | Qué muestra |
+|---|---|---|
+| `/` | `<Navigate>` | Redirige a `/countries` |
+| `/countries` | `CountriesPage` | Grilla de países con nombre y bandera |
+| `/countries/:cca2` | `CountryDetailPage` | Detalle del país según su código ISO |
+
+## 🛠️ Stack
+
+**React** · **Vite** · **React Router** · **react-clock** · **dayjs** · **countries.dev API**
+
+## 🚀 Cómo ejecutarlo
+
+```bash
 git clone https://github.com/maaxilopp/GeneradorPaises-Dwym.git
 cd GeneradorPaises-Dwym
 npm install
 npm run dev
+```
+
+Abrí el navegador en la URL que imprime la terminal (por defecto `http://localhost:5173`).
+
+> No hace falta API key ni levantar un backend: countries.dev es pública y responde con CORS abierto.
+
+## 📁 Estructura
+
+```bash
+src/
+├── api/
+│   └── countries.js        # Llamadas a la API: lista, por código y al azar
+├── componentes/
+│   ├── CountryCard.jsx     # Nombre, código y bandera
+│   └── CountryClock.jsx    # Reloj analógico + hora digital
+├── hooks/
+│   ├── useRandomCountry.js # País al azar, con carga y error
+│   └── useZonedClock.js    # Hora del huso horario, refrescada cada segundo
+├── pages/
+│   ├── CountriesPage.jsx   # Listado
+│   └── CountryDetailPage.jsx
+├── utils/
+│   └── time.js             # Normaliza el huso horario de la API
+└── App.jsx                 # Definición de rutas
+```
 
 
-Luego abrí el navegador en la URL que te muestra la terminal.
+## 🧩 Decisiones técnicas
 
-## Componentes
+- **Banderas vía `flagcdn.com`.** El endpoint `/countries` de countries.dev devuelve la bandera como emoji, que Windows no renderiza. Se arma la URL de la imagen a partir del código ISO.
+- **`useParams` como fuente de verdad.** El detalle no recibe props: lee el código de la URL, así un enlace directo funciona igual que navegar desde la lista.
+- **Refetch al cambiar de país.** El `useEffect` depende de `cca2`, para que navegar entre detalles recargue los datos.
 
-* App → coordina la carga del país y el estado general de la aplicación
-* CountryCard → muestra el nombre, el código y la bandera del país sorteado
-* CountryClock → renderiza el reloj analógico y la hora digital
+---
 
-## Hooks
-
-* useRandomCountry → pide un país al azar a la API y expone los estados de carga y error
-* useZonedClock → calcula la hora del huso horario recibido y la actualiza cada segundo
-
-## Utilidades
-
-* api/countries.js → función que consulta la API de countries.dev
-* utils/time.js → convierte el huso horario que devuelve la API al formato que necesita el reloj
+<div align="center">
+<sub>Maximiliano López · 2026</sub>
+</div>
