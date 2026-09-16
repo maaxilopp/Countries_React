@@ -8,7 +8,9 @@ export function CountryClock({ timezone }) {
 
   return (
     <div className="clock">
-      <Clock value={date} size={180} />
+      <div className="clock-face">
+        <Clock value={date} size={180} />
+      </div>
       <p className="digital">{hora}</p>
       <p className="tz">{timezone}</p>
     </div>

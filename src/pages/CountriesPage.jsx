@@ -20,17 +20,16 @@ export function CountriesPage() {
   return (
     <ul className="country-list">
       {countries.map((c) => (
-        <li key={c.alpha2Code} className="country-card">
-          <div className="country-info">
+        <li key={c.alpha2Code} className="country-item">
+          <Link to={c.alpha2Code} className="country-card">
             <img
               src={`https://flagcdn.com/w40/${c.alpha2Code.toLowerCase()}.png`}
               alt={`Bandera de ${c.name}`}
               width="40"
             />
-            <span>{c.name}</span>
-          </div>
-          <Link to={c.alpha2Code} className="detail-btn">
-            Ver en detalle
+            <span className="country-name" title={c.name}>
+              {c.name}
+            </span>
           </Link>
         </li>
       ))}
