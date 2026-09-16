@@ -15,14 +15,18 @@ Trabajo práctico de **Desarrollo Web y Mobile** - UT5
 
 ---
 
-<img width="952" alt="Vista de la aplicación" src="https://github.com/user-attachments/assets/8e3b5861-1aaf-47a5-ba0c-335be018d072" />
-<img width="952" height="461" alt="image" src="https://github.com/user-attachments/assets/73b93e1c-5cd5-42e1-bb27-1b6be547b209" />
+<img width="959" height="471" alt="image" src="https://github.com/user-attachments/assets/6cda0e33-7845-477d-8001-bb332e60d0c6" />
+<img width="959" height="471" alt="image" src="https://github.com/user-attachments/assets/a731971a-851d-4655-935c-3b757278cc5b" />
+<img width="420" height="468" alt="image" src="https://github.com/user-attachments/assets/2480c20f-d08b-4ec9-b195-0cc4164b28a1" />
+<img width="420" height="468" alt="image" src="https://github.com/user-attachments/assets/c0d2883f-8574-4a6c-b37e-50428e73e312" />
+
 
 ---
 
 ## ✨ Qué hace
 
 Una SPA que consume la API pública de [countries.dev](https://countries.dev) y resuelve toda la navegación del lado del cliente con **react-router**, sin recargas.
+| 🌙 **Dark mode** | Selector claro/oscuro en todas las páginas, recordado entre visitas |
 
 | | |
 |---|---|
@@ -42,7 +46,7 @@ Una SPA que consume la API pública de [countries.dev](https://countries.dev) y 
 
 ## 🛠️ Stack
 
-**React** · **Vite** · **React Router** · **react-clock** · **dayjs** · **countries.dev API**
+**React** · **Context API** · **Vite** · **React Router** · **react-clock** · **dayjs** · **countries.dev API**
 
 ## 🚀 Cómo ejecutarlo
 
@@ -66,6 +70,8 @@ src/
 ├── componentes/
 │   ├── CountryCard.jsx     # Nombre, código y bandera
 │   └── CountryClock.jsx    # Reloj analógico + hora digital
+├── context/
+│   └── ThemeContext.jsx    # Estado del modo claro/oscuro + localStorage
 ├── hooks/
 │   ├── useRandomCountry.js # País al azar, con carga y error
 │   └── useZonedClock.js    # Hora del huso horario, refrescada cada segundo
@@ -74,7 +80,7 @@ src/
 │   └── CountryDetailPage.jsx
 ├── utils/
 │   └── time.js             # Normaliza el huso horario de la API
-└── App.jsx                 # Definición de rutas
+└── App.jsx                 # Definición de rutas y selector de modo
 ```
 
 
@@ -83,6 +89,9 @@ src/
 - **Banderas vía `flagcdn.com`.** El endpoint `/countries` de countries.dev devuelve la bandera como emoji, que Windows no renderiza. Se arma la URL de la imagen a partir del código ISO.
 - **`useParams` como fuente de verdad.** El detalle no recibe props: lee el código de la URL, así un enlace directo funciona igual que navegar desde la lista.
 - **Refetch al cambiar de país.** El `useEffect` depende de `cca2`, para que navegar entre detalles recargue los datos.
+- - **Tema global con Context.** `ThemeProvider` envuelve la app en `main.jsx`, así cualquier componente accede al modo con `useTheme()` sin pasar props.
+- **Preferencia persistente.** El modo se lee de `localStorage` al iniciar y se guarda cada vez que cambia, así la app abre como la dejó el usuario.
+- **Clases según el modo.** El `<main>` recibe `dark-mode` o `light-mode`, y el CSS ajusta colores a partir de esa clase.
 
 ---
 
