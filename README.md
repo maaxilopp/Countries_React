@@ -16,8 +16,9 @@ Trabajo práctico de **Desarrollo Web y Mobile** - UT5
 ---
 
 <p align="center">
-  <img width="49%" alt="Listado modo claro" src="https://github.com/user-attachments/assets/6cda0e33-7845-477d-8001-bb332e60d0c6" />
-  <img width="49%" alt="Listado modo oscuro" src="https://github.com/user-attachments/assets/a731971a-851d-4655-935c-3b757278cc5b" />
+  <img width="49%" alt="image" src="https://github.com/user-attachments/assets/c3c534c7-7cfb-4367-9775-649ab7a99a1f" />
+  <img width="49%" alt="Listado modo oscuro" src="https://github.com/user-attachments/assets/481f88e2-b10f-4aa2-8e11-958937de9e57" />
+
 </p>
 <p align="center">
   <img width="40%" alt="Detalle modo claro" src="https://github.com/user-attachments/assets/2480c20f-d08b-4ec9-b195-0cc4164b28a1" />
