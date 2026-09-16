@@ -17,8 +17,8 @@ Trabajo práctico de **Desarrollo Web y Mobile** - UT5
 
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/6cda0e33-7845-477d-8001-bb332e60d0c6" />
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/a731971a-851d-4655-935c-3b757278cc5b" />
-<img width="100" height="200" alt="image" src="https://github.com/user-attachments/assets/2480c20f-d08b-4ec9-b195-0cc4164b28a1" />
-<img width="100" height="200" alt="image" src="https://github.com/user-attachments/assets/c0d2883f-8574-4a6c-b37e-50428e73e312" />
+<img width="170" height="200" alt="image" src="https://github.com/user-attachments/assets/2480c20f-d08b-4ec9-b195-0cc4164b28a1" />
+<img width="170" height="200" alt="image" src="https://github.com/user-attachments/assets/c0d2883f-8574-4a6c-b37e-50428e73e312" />
 
 
 ---
